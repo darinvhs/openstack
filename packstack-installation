@@ -1,0 +1,11 @@
+hostnamectl set-hostname packstack.darin.web.id
+cat > /etc/resolv.conf
+search google.com
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+yum -y update; yum -y upgrade; yum -y clean all; yum -y autoremove
+yum -y install vim net-tools telnet screen strace wget zip ntpdate
+yum -y remove postfix
+systemctl stop firewalld
+setenforce 0
+getenforce
