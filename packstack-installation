@@ -9,3 +9,5 @@ yum -y remove postfix
 systemctl stop firewalld
 setenforce 0
 getenforce
+
+to be continued ..
