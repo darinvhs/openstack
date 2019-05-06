@@ -1,0 +1,33 @@
+# Rescue instance using live CD from RC Admin
+openstack image list | grep -i live
+openstack server rescue --image [live-image-ID] [instance-ID]
+
+# Booting to live CD, restart and login using console
+# Mount root partition
+fdisk -l
+mount /dev/vda1 /mnt
+chroot /mnt
+
+# Add temporary user, and grant sudo access
+adduser [username]
+passwd [username]
+usermod -a -G whell/sudo [username]
+
+# Modified ssh configuration
+# Enable below lines
+vi /etc/ssh/sshd_config
+Port 22
+ListenAddress 0.0.0.0
+PermitRootLogin yes
+PasswordAuthentication yes
+AllowUsers [username]
+
+# Check SELinux, disable if necessary
+vi /etc/selinux/config
+SELinux=disabled
+
+setenforce 0
+systemctl restart sshd
+
+# SSH to instance
+# Add new keypair to authorized_keys
