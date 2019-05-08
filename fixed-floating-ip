@@ -1,0 +1,2 @@
+$ openstack floating ip create --floating-ip-address [IP Address] --project [Project-ID] [ID Pool Public/Region]
+* See telegram for ID Pool Public/Region
