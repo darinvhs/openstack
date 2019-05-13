@@ -31,3 +31,5 @@ systemctl restart sshd
 
 # SSH to instance
 # Add new keypair to authorized_keys
+
+openstack server unrescue [instance-ID]
