@@ -33,3 +33,6 @@ systemctl restart sshd
 # Add new keypair to authorized_keys
 
 openstack server unrescue [instance-ID]
+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDDylLwiUVw1Zae48PgCBam9jmGAmdq8XZ4qdrc/H8P1Zfody4KycLoKNrL7qbaV/1pM2uE38wtGHb/N5Bfs75Fp75WBt8iJIdStgw2unLomNVh3vVXQeP5U62A5jeR+BSlvOq0UIr89rIXXvqQsmegh/zps/xToImQ5cFo1uqPVg2C8oJhHXgWq+O0jANeMOI2qO7fack8ePmLJ5P/YS3jCcjQSXNAevB0tCXtnypZuOJiJWzkzKTRDIoKwf+lhjs+pyY2pqgWiiM/XYT2590Ma2NX9gASfHTdql2/lS9YM8KyS0Tqg+AoMRnQ4xSRc7GXmmosRCNqHDRTv9oo2a3v darin@A1-PF0P8E0D
