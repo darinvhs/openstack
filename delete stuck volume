@@ -1,0 +1,4 @@
+openstack volume list --project [project-id]
+openstack volume show [volume-id] *note the attachment_id.
+cinder --os-volume-api-version 3.50 attachment-delete <attachment_id>
+openstack volume delete [volume-id]
