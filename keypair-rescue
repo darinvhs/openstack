@@ -33,3 +33,15 @@ systemctl restart sshd
 # Add new keypair to authorized_keys
 
 openstack server unrescue [instance-ID]
+-----------------------------------------------------
+Rescue CentOS 6.
+- using image ee701f25-d872-42a5-baf9-dc7fdfcf8f06
+- sudo su
+- mount disk and chroot
+- disable selinux
+- allow password login
+- adduser with pw at once, give sudo access
+  useradd -p $(openssl passwd -1 password) username
+  usermod -a -G wheel username
+  visudo
+- try to login and makesure
