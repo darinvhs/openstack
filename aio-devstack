@@ -2,6 +2,11 @@
 https://docs.openstack.org/devstack/rocky/guides/single-machine.html
 https://docs.openstack.org/devstack/latest/
 
+===addressing eth0 (physical)===
+network address = 10.0.0.0/24
+ip address = 10.0.0.12/24
+gateway = 10.0.0.1
+
 ===local.conf====
 [[local|localrc]]
 FLOATING_RANGE=10.0.0.224/27 
