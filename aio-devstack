@@ -1,1 +1,25 @@
+===installation, tested on Ubuntu18.04 NEO===
+https://docs.openstack.org/devstack/rocky/guides/single-machine.html
+https://docs.openstack.org/devstack/latest/
 
+===local.conf====
+[[local|localrc]]
+FLOATING_RANGE=10.0.0.224/27 
+FIXED_RANGE=10.11.11.0/24
+FIXED_NETWORK_SIZE=256
+FLAT_INTERFACE=eth0
+ADMIN_PASSWORD=SecretPassword
+DATABASE_PASSWORD=SecretPassword
+RABBIT_PASSWORD=SecretPassword
+SERVICE_PASSWORD=SecretPassword
+
+===result, takes almost 1 hour after installation===
+This is your host IP address: 10.0.0.12
+This is your host IPv6 address: ::1
+Horizon is now available at http://10.0.0.12/dashboard                                                               
+Keystone is serving at http://10.0.0.12/identity/                                                                                                           
+The default users are: admin and demo
+The password: SecretPassword
+
+===services management===
+https://docs.openstack.org/devstack/latest/systemd.html
