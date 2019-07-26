@@ -1,13 +1,13 @@
 ===installation, tested on Ubuntu18.04 NEO===
+https://docs.openstack.org/devstack/latest/ 
 https://docs.openstack.org/devstack/rocky/guides/single-machine.html
-https://docs.openstack.org/devstack/latest/
-
-===addressing eth0 (physical)===
-network address = 10.0.0.0/24
-ip address = 10.0.0.12/24
-gateway = 10.0.0.1
-
-===local.conf====
+-- sudo useradd -s /bin/bash -d /opt/stack -m stack
+-- sudo echo "stack ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+-- su stack; cd /opt/stack
+-- git clone https://git.openstack.org/openstack-dev/devstack
+-- cd devstack
+-- cat > local.conf
+###local.conf###
 [[local|localrc]]
 FLOATING_RANGE=10.0.0.224/27 
 FIXED_RANGE=10.11.11.0/24
@@ -17,6 +17,14 @@ ADMIN_PASSWORD=SecretPassword
 DATABASE_PASSWORD=SecretPassword
 RABBIT_PASSWORD=SecretPassword
 SERVICE_PASSWORD=SecretPassword
+
+-- screen -S devstack-installation
+-- ./stack.sh
+
+===addressing eth0 (physical)===
+network address = 10.0.0.0/24
+ip address = 10.0.0.12/24
+gateway = 10.0.0.1
 
 ===result, takes almost 1 hour after installation===
 This is your host IP address: 10.0.0.12
